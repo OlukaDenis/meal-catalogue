@@ -3,13 +3,11 @@ import { fetchLoading, fetchingCategories, fetchingError } from './actionCreator
 const fetchCategories = () => {
   return dispatch => {
     dispatch(fetchLoading());
-    fetch('https://www.themealdb.com/api/json/v1/1/list.php?c=list')
+    fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
     .then(res => res.json())
     .then(result => {
-      if(result.error) {
-          throw(result.error);
-      }
-      dispatch(fetchingCategories(result.meals));
+      dispatch(fetchingCategories(result.categories)) 
+      console.log(result.categories)
     })
     .catch(err => {
       dispatch(fetchingError(err));

@@ -2,7 +2,7 @@ import { FETCHING_CATEGORIES, FETCH_LOADING, FETCHING_ERROR } from '../actions/t
 
 const initialState = {
   loading: false,
-  products: [],
+  categories: [],
   error: null
 }
 
@@ -17,7 +17,7 @@ const categoryReducer = (state = initialState, action) => {
     case FETCHING_CATEGORIES:
       return {
         ...state,
-        products: action.categories,
+        categories: action.categories,
         loading: false,
       };
     
