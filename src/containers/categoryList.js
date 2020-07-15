@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { Container, Row, Col} from 'react-bootstrap';
 import Category from '../components/category';
 import fetchCategories from '../actions/categories';
+import '../styles/category.scss';
 
 const CategoryList = (props) => {
 
@@ -22,7 +23,7 @@ const CategoryList = (props) => {
             loading ? (
               <p>Loading....</p>
             ) : (
-              error ? <p>{error}</p> :
+              error ? <p>{error.message}</p> :
               categories.map(cat =>  <Category key={cat.idCategory} category={cat} />)
             )
           }
