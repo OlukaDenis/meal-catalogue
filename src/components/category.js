@@ -1,28 +1,50 @@
 import React from 'react';
-import { Container, Row, Col} from 'react-bootstrap';
+import PropTypes from 'prop-types';
+import { Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const Category = (props) => {
-  const { category } = props;
+const Category = ({ category }) => {
+  const {
+    strCategory,
+    strCategoryDescription,
+    strCategoryThumb, 
+  } = category;
 
   function handleClick() {
-    console.log('Display meals');
+    
   }
 
   return (
     <Col md={6} lg={4} sm={10}>
       <div className="category-item">
-        <img 
-          src={category.strCategoryThumb} 
-          alt={category.strCategory} 
+        <img
+          src={strCategoryThumb}
+          alt={strCategory}
           onClick={handleClick}
         />
         <div className="category-info">
-          <h1 onClick={handleClick} >{category.strCategory}</h1>
-          <p>{category.strCategoryDescription}</p>
+          <Link to={`/${strCategory}`}><h1>{strCategory}</h1></Link>
+          <p>{strCategoryDescription}</p>
         </div>
       </div>
     </Col>
   );
-}
+};
+
+Category.defaultProps = {
+  category: {
+    strCategory: '',
+    strCategoryDescription: '',
+    strCategoryThumb: '',
+  },
+};
+
+Category.propTypes = {
+  category: PropTypes.shape({
+    strCategory: PropTypes.string,
+    strCategoryDescription: PropTypes.string,
+    strCategoryThumb: PropTypes.string,
+  }),
+};
 
 export default Category;

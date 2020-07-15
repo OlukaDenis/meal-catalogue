@@ -1,12 +1,12 @@
-import { FETCHING_CATEGORIES, FETCH_LOADING, FETCHING_ERROR } from '../actions/types';
+import { FETCHING_MEALS, FETCH_LOADING, FETCHING_ERROR } from '../actions/types';
 
 const initialState = {
   loading: false,
-  categories: [],
+  meals: [],
   error: null,
 };
 
-const categoryReducer = (state = initialState, action) => {
+const mealReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_LOADING:
       return {
@@ -14,10 +14,10 @@ const categoryReducer = (state = initialState, action) => {
         loading: true,
       };
 
-    case FETCHING_CATEGORIES:
+    case FETCHING_MEALS:
       return {
         ...state,
-        categories: action.categories,
+        meals: action.meals,
         loading: false,
       };
 
@@ -33,4 +33,4 @@ const categoryReducer = (state = initialState, action) => {
   }
 };
 
-export default categoryReducer;
+export default mealReducer;

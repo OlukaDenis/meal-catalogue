@@ -1,27 +1,27 @@
-import { FETCHING_CATEGORIES, FETCH_LOADING, FETCHING_ERROR } from './types';
+import { FETCHING_CATEGORIES, FETCHING_MEALS, FETCH_LOADING, FETCHING_ERROR } from './types';
 
-const fetchingCategories = (categories) => {
-  return {
-    type: FETCHING_CATEGORIES,
-    categories: categories,
-  }
-}
+const fetchingCategories = categories => ({
+  type: FETCHING_CATEGORIES,
+  categories,
+});
 
-const fetchLoading = () => {
-  return {
-    type: FETCH_LOADING,
-  }
-}
+const fetchingMeals = meals => ({
+  type: FETCHING_MEALS,
+  meals,
+})
 
-const fetchingError = (error) => {
-  return {
-    type: FETCHING_ERROR,
-    error: error,
-  }
-}
+const fetchLoading = () => ({
+  type: FETCH_LOADING,
+});
+
+const fetchingError = error => ({
+  type: FETCHING_ERROR,
+  error,
+});
 
 export {
   fetchLoading,
   fetchingCategories,
-  fetchingError
-}
+  fetchingMeals,
+  fetchingError,
+};
