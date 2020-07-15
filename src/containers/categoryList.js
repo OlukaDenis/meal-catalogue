@@ -1,13 +1,18 @@
-import React, { Component } from 'react';
+import React, { useEffect, Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Container, Row, Col} from 'react-bootstrap';
 import Category from '../components/category';
 import fetchCategories from '../actions/categories';
 
 const CategoryList = (props) => {
 
-  const { categories, error, loading } = props;
+  const { categories, error, loading, fetchCategories } = props;
+  useEffect(() => {
+    fetchCategories();
+  }, [])
+
   console.log(loading)
   return (
     <section  className="categories-section">
@@ -17,6 +22,7 @@ const CategoryList = (props) => {
             loading ? (
               <p>Loading....</p>
             ) : (
+              error ? <p>{error}</p> :
               categories.map(cat =>  <Category key={cat.idCategory} category={cat} />)
             )
           }
@@ -27,9 +33,9 @@ const CategoryList = (props) => {
 }
 
 const mapStateToProps = state => ({
-    categories: state.categories,
-    error: state.error,
-    loading: state.loading,
+    categories: state.categories.categories,
+    error: state.categories.error,
+    loading: state.categories.loading,
   });
 
 const mapDispatchToProps = dispatch => ({
