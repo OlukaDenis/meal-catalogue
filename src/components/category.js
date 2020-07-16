@@ -7,11 +7,11 @@ const Category = ({ category }) => {
   const {
     strCategory,
     strCategoryDescription,
-    strCategoryThumb, 
+    strCategoryThumb,
   } = category;
 
   function handleClick() {
-    
+
   }
 
   return (

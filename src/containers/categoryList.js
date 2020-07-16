@@ -6,12 +6,10 @@ import Category from '../components/category';
 import fetchCategories from '../actions/categories';
 import '../styles/category.scss';
 
-const CategoryList = props => {
-
-  const {
-    categories, error, loading, fetchCategories,
-  } = props;
-
+const CategoryList = ({
+  categories, error, loading, fetchCategories,
+}) => {
+  
   useEffect(() => {
     fetchCategories();
   }, []);

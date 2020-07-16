@@ -7,7 +7,7 @@ const Meal = ({ meal }) => {
   const {
     idMeal,
     strMeal,
-    strMealThumb, 
+    strMealThumb,
   } = meal;
 
   return (
@@ -18,7 +18,7 @@ const Meal = ({ meal }) => {
           alt={strMeal}
         />
         <div className="category-info">
-          <Link to={`/${idMeal}`}><h2>{idMeal}</h2></Link>
+          <Link to={`/${idMeal}`}><h2>{strMeal}</h2></Link>
         </div>
       </div>
     </Col>
