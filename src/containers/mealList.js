@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useParams } from 'react-router-dom';
+import { useParams, useRouteMatch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Container, Row } from 'react-bootstrap';
 import Meal from '../components/meal';
@@ -21,7 +21,7 @@ const MealList = props => {
     if (categoryType) {
       fetchMeals(categoryType);
     }
-  }, []);
+  }, [fetchMeals, categoryType]);
 
   return (
     <section className="meals-section">

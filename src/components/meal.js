@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 
 const Meal = ({ meal }) => {
+
   const {
     idMeal,
     strMeal,
     strMealThumb,
   } = meal;
+
+  const { url } = useRouteMatch();
 
   return (
     <Col md={6} lg={4} sm={10}>
@@ -18,7 +21,7 @@ const Meal = ({ meal }) => {
           alt={strMeal}
         />
         <div className="category-info">
-          <Link to={`/${idMeal}`}><h2>{strMeal}</h2></Link>
+          <Link to={`${url}/${idMeal}`}><h2>{strMeal}</h2></Link>
         </div>
       </div>
     </Col>

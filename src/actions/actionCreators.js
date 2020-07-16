@@ -1,10 +1,15 @@
 import {
-  FETCHING_CATEGORIES, FETCHING_MEALS, FETCH_LOADING, FETCHING_ERROR,
+  FETCHING_CATEGORIES, FETCHING_DISH, FETCHING_MEALS, FETCH_LOADING, FETCHING_ERROR,
 } from './types';
 
 const fetchingCategories = categories => ({
   type: FETCHING_CATEGORIES,
   categories,
+});
+
+const fetchingDish = dish => ({
+  type: FETCHING_DISH,
+  dish,
 });
 
 const fetchingMeals = meals => ({
@@ -24,6 +29,7 @@ const fetchingError = error => ({
 export {
   fetchLoading,
   fetchingCategories,
+  fetchingDish,
   fetchingMeals,
   fetchingError,
 };
