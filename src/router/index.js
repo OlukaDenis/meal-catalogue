@@ -7,7 +7,7 @@ const AppRouter = () => (
   <Router>
     <Switch>
       <Route exact path="/" component={CategoryList} />
-      <Route path="/:categoryType" component={MealList} />  
+      <Route path="/:categoryType" component={MealList} />
     </Switch>
   </Router>
 );

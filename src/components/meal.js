@@ -25,4 +25,19 @@ const Meal = ({ meal }) => {
   );
 };
 
+Meal.defaultProps = {
+  meal: {
+    idMeal: '',
+    strMeal: '',
+    strMealThumb: '',
+  },
+};
+
+Meal.propTypes = {
+  meal: PropTypes.shape({
+    idMeal: PropTypes.string,
+    strMeal: PropTypes.string,
+    strMealThumb: PropTypes.string,
+  }),
+};
 export default Meal;

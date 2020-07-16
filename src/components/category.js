@@ -10,17 +10,12 @@ const Category = ({ category }) => {
     strCategoryThumb,
   } = category;
 
-  function handleClick() {
-
-  }
-
   return (
     <Col md={6} lg={4} sm={10}>
       <div className="category-item">
         <img
           src={strCategoryThumb}
           alt={strCategory}
-          onClick={handleClick}
         />
         <div className="category-info">
           <Link to={`/${strCategory}`}><h1>{strCategory}</h1></Link>
