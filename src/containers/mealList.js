@@ -5,7 +5,10 @@ import { connect } from 'react-redux';
 import { Container, Row } from 'react-bootstrap';
 import Meal from '../components/meal';
 import fetchMeals from '../actions/meals';
+import ErrorPage from '../components/errors/errorPage';
+import LoadingPage from '../components/loadingPage';
 import '../styles/meal.scss';
+const notFound = 'No meal found';
 
 const MealList = props => {
   const { categoryType } = useParams();
@@ -21,20 +24,24 @@ const MealList = props => {
     if (categoryType) {
       fetchMeals(categoryType);
     }
-  }, [fetchMeals, categoryType]);
+  }, []);
 
   return (
     <section className="meals-section">
       <Container>
         <Row>
           {(() => {
-            if (loading) {
-              return (<p>Loading....</p>);
+            if (meals != null) {
+              if (loading) {
+                return <LoadingPage />
+              }
+              return (
+                error ? <ErrorPage error={error.message} />
+                  : meals.map(item => <Meal key={item.idMeal} meal={item} />)
+              );
+            } else {
+              return  <ErrorPage error={notFound} />
             }
-            return (
-              error ? <p>{error.message}</p>
-                : meals.map(item => <Meal key={item.idMeal} meal={item} />)
-            );
           })() }
         </Row>
       </Container>
@@ -42,11 +49,14 @@ const MealList = props => {
   );
 };
 
-const mapStateToProps = state => ({
-  meals: state.meals.meals,
-  error: state.meals.error,
-  loading: state.meals.loading,
-});
+const mapStateToProps = state => {
+  console.log(state)
+  return {
+    meals: state.meals.meals,
+    error: state.meals.error,
+    loading: state.meals.loading,
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchMeals: category => {

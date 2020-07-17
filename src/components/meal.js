@@ -4,7 +4,6 @@ import { Col } from 'react-bootstrap';
 import { Link, useRouteMatch } from 'react-router-dom';
 
 const Meal = ({ meal }) => {
-
   const {
     idMeal,
     strMeal,
@@ -19,6 +18,7 @@ const Meal = ({ meal }) => {
         <img
           src={strMealThumb}
           alt={strMeal}
+          style={{width: '100%'}}
         />
         <div className="category-info">
           <Link to={`${url}/${idMeal}`}><h2>{strMeal}</h2></Link>

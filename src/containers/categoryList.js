@@ -4,7 +4,10 @@ import { connect } from 'react-redux';
 import { Container, Row } from 'react-bootstrap';
 import Category from '../components/category';
 import fetchCategories from '../actions/categories';
+import ErrorPage from '../components/errors/errorPage';
+import LoadingPage from '../components/loadingPage';
 import '../styles/category.scss';
+const notFound = 'No meal found';
 
 const CategoryList = ({
   categories, error, loading, fetchCategories,
@@ -18,13 +21,17 @@ const CategoryList = ({
       <Container>
         <Row>
           {(() => {
-            if (loading) {
-              return (<p>Loading....</p>);
+            if (categories != null) {
+              if (loading) {
+                return <LoadingPage />
+              }
+              return (
+                error ? <ErrorPage error={error.message} />
+                  : categories.map(cat => <Category key={cat.idCategory} category={cat} />)
+              );
+            } else {
+              return  <ErrorPage error={notFound} />
             }
-            return (
-              error ? <p>{error.message}</p>
-                : categories.map(cat => <Category key={cat.idCategory} category={cat} />)
-            );
           })() }
         </Row>
       </Container>

@@ -1,4 +1,4 @@
-import React , { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -27,10 +27,8 @@ const SingleDish = props => {
     strArea,
     strInstructions,
     strMealThumb,
-    strTags,
     strYoutube,
   } = dish;
-
 
   return (
     <section className="meals-section">
@@ -39,22 +37,28 @@ const SingleDish = props => {
         <Row>
           {(() => {
             if (loading) {
-              return (<p>Loading....</p>);
+              return (<p>Loading Dish....</p>);
             }
             return (
-              error ? <p>{error.message}</p> :
-              <>
-                <Col md={6} lg={6} sm={10}>
-                  <div className="single-dish">
-                    <img src={strMealThumb} style={{width: '100%'}}/>
-                  </div>
-                </Col>
-                <Col md={6} lg={6} sm={10}>
-                  <div className="dish-instructions">
-                    <p>{strInstructions}</p>
-                  </div>
-                </Col>
-              </>
+              error ? <p>{error.message}</p>
+                : (
+                  <>
+                    <Col md={6} lg={6} sm={10}>
+                      <div className="single-dish">
+                        <img src={strMealThumb} style={{ width: '100%' }} />
+                      </div>
+                    </Col>
+                    <Col md={6} lg={6} sm={10}>
+                      <div className="dish-instructions">
+                        <p>{strInstructions}</p>
+                        <p>
+                          <span>{strCategory}</span>
+                          <span>{strArea}</span>
+                        </p>
+                      </div>
+                    </Col>
+                  </>
+                )
             );
           })() }
         </Row>
@@ -62,7 +66,6 @@ const SingleDish = props => {
     </section>
   );
 };
-
 
 const mapStateToProps = state => ({
   dish: state.dish.dish,
@@ -73,7 +76,7 @@ const mapStateToProps = state => ({
 const mapDispatchTOProps = dispatch => ({
   fetchDish: mealId => {
     dispatch(fetchDish(mealId));
-  }
+  },
 });
 
-export default connect(mapStateToProps, mapDispatchTOProps) (SingleDish);
+export default connect(mapStateToProps, mapDispatchTOProps)(SingleDish);
