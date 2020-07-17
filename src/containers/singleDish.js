@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Container, Row, Col } from 'react-bootstrap';
+import LoadingPage from '../components/loadingPage';
 import fetchDish from '../actions/dish';
 
 const SingleDish = props => {
@@ -37,7 +38,7 @@ const SingleDish = props => {
         <Row>
           {(() => {
             if (loading) {
-              return (<p>Loading Dish....</p>);
+              return <LoadingPage />
             }
             return (
               error ? <p>{error.message}</p>

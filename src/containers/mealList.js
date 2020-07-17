@@ -20,6 +20,7 @@ const MealList = props => {
     fetchMeals,
   } = props;
 
+  
   useEffect(() => {
     if (categoryType) {
       fetchMeals(categoryType);
@@ -31,13 +32,14 @@ const MealList = props => {
       <Container>
         <Row>
           {(() => {
+            
             if (meals != null) {
               if (loading) {
                 return <LoadingPage />
               }
               return (
-                error ? <ErrorPage error={error.message} />
-                  : meals.map(item => <Meal key={item.idMeal} meal={item} />)
+                error ? <ErrorPage error={error.message} /> :
+                meals.map(item => <Meal key={item.idMeal} meal={item} />)
               );
             } else {
               return  <ErrorPage error={notFound} />

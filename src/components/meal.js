@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Col } from 'react-bootstrap';
 import { Link, useRouteMatch } from 'react-router-dom';
+import '../styles/meal.scss';
 
 const Meal = ({ meal }) => {
   const {

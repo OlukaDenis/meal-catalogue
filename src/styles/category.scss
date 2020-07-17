@@ -1,1 +1,51 @@
 @import 'variables.scss';
+
+.categories-section {
+  background-color: $primary-light;
+  padding-top: 50px;
+}
+
+
+.category-item {
+  background-color: $light-bg;
+  min-height: 400px;
+  margin-bottom: 20px;
+
+  .img-div {
+    position: relative;
+
+    .img-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(4, 15, 29, 0.178);
+    }
+  }
+
+  .category-info {
+    padding: 5px 20px;
+
+    .category-title {
+      color: #111;
+      text-transform: uppercase;
+
+      h4 {
+        padding: 10px 0;
+        text-align: center;
+        font-family: $font-secondary;
+      }
+    }
+
+    p {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      font-family: $font-primary;
+      font-weight: lighter;
+      text-align: justify;
+    }
+  }
+}

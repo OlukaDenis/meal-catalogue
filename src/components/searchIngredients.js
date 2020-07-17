@@ -23,14 +23,14 @@ const SearchIngredients = props => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="search-form" onSubmit={handleSubmit}>
       <input 
         type="text" 
-        placeholder="Search Recipe..."
+        placeholder="Search Recipe ..."
         onChange={handleChange} 
         value={ingredient}
       />
-      <button type="submit" className="btn btn-primary">Search</button>
+      <button type="submit" className="btn-search">Search</button>
     </form>
   );
 };

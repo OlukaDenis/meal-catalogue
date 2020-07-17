@@ -1,1 +1,26 @@
 @import 'variables.scss';
+
+.header {
+  background-color: $primary;
+  padding: 20px 50px;
+  height: 80px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+
+  .logo {
+    width: 30%;
+
+    h2 {
+      letter-spacing: 5px;
+      font-family: $font-primary;
+      font-size: 2rem;
+      color: $whitish;
+      text-transform: uppercase;
+      font-weight: lighter;
+    }
+  }
+
+}

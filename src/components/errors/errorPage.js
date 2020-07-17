@@ -1,12 +1,13 @@
 import React from 'react';
 import errorImage from '../../error.png';
+import '../../styles/errorPage.scss';
 
 const ErrorPage = ({ error }) => {
 
   return (
     <div className="error-page">
 
-      <div>
+      <div className="error-info">
         <img src={errorImage} />
         <h4>{error}</h4>
       </div>

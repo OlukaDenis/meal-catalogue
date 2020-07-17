@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import '../styles/category.scss';
 
 const Category = ({ category }) => {
   const {
@@ -13,12 +14,16 @@ const Category = ({ category }) => {
   return (
     <Col md={6} lg={4} sm={10}>
       <div className="category-item">
-        <img
-          src={strCategoryThumb}
-          alt={strCategory}
-        />
+        <div className="img-div">
+          <img
+            src={strCategoryThumb}
+            alt={strCategory}
+          />
+          <div className="img-overlay" />
+        </div>
+        
         <div className="category-info">
-          <Link to={`/${strCategory}`}><h1>{strCategory}</h1></Link>
+          <Link className="category-title" to={`/${strCategory}`}><h4>{strCategory}</h4></Link>
           <p>{strCategoryDescription}</p>
         </div>
       </div>
