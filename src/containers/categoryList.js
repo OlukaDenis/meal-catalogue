@@ -7,6 +7,7 @@ import fetchCategories from '../actions/categories';
 import ErrorPage from '../components/errors/errorPage';
 import LoadingPage from '../components/loadingPage';
 import '../styles/category.scss';
+
 const notFound = 'No meal found';
 
 const CategoryList = ({
@@ -23,15 +24,14 @@ const CategoryList = ({
           {(() => {
             if (categories != null) {
               if (loading) {
-                return <LoadingPage />
+                return <LoadingPage />;
               }
               return (
                 error ? <ErrorPage error={error.message} />
                   : categories.map(cat => <Category key={cat.idCategory} category={cat} />)
               );
-            } else {
-              return  <ErrorPage error={notFound} />
             }
+            return <ErrorPage error={notFound} />;
           })() }
         </Row>
       </Container>

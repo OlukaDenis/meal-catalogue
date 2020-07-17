@@ -9,7 +9,7 @@ import NotFound from '../components/errors/notFound';
 const AppRouter = () => (
   <Router>
     <Header />
-    <Switch>      
+    <Switch>
       <Route exact path="/" component={CategoryList} />
       <Route exact path="/search/:ingredient" component={MealList} />
       <Route exact path="/:categoryType" component={MealList} />

@@ -38,7 +38,7 @@ const SingleDish = props => {
         <Row>
           {(() => {
             if (loading) {
-              return <LoadingPage />
+              return <LoadingPage />;
             }
             return (
               error ? <p>{error.message}</p>

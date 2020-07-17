@@ -21,7 +21,7 @@ const Category = ({ category }) => {
           />
           <div className="img-overlay" />
         </Link>
-        
+
         <div className="category-info">
           <Link className="category-title" to={`/${strCategory}`}><h4>{strCategory}</h4></Link>
           <p>{strCategoryDescription}</p>

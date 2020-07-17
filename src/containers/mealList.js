@@ -8,6 +8,7 @@ import fetchMeals from '../actions/meals';
 import ErrorPage from '../components/errors/errorPage';
 import LoadingPage from '../components/loadingPage';
 import '../styles/meal.scss';
+
 const notFound = 'No meal found';
 
 const MealList = props => {
@@ -20,7 +21,6 @@ const MealList = props => {
     fetchMeals,
   } = props;
 
-  
   useEffect(() => {
     if (categoryType) {
       fetchMeals(categoryType);
@@ -32,18 +32,16 @@ const MealList = props => {
       <Container>
         <Row>
           {(() => {
-            
             if (meals != null) {
               if (loading) {
-                return <LoadingPage />
+                return <LoadingPage />;
               }
               return (
-                error ? <ErrorPage error={error.message} /> :
-                meals.map(item => <Meal key={item.idMeal} meal={item} />)
+                error ? <ErrorPage error={error.message} />
+                  : meals.map(item => <Meal key={item.idMeal} meal={item} />)
               );
-            } else {
-              return  <ErrorPage error={notFound} />
             }
+            return <ErrorPage error={notFound} />;
           })() }
         </Row>
       </Container>
@@ -52,7 +50,7 @@ const MealList = props => {
 };
 
 const mapStateToProps = state => {
-  console.log(state)
+  console.log(state);
   return {
     meals: state.meals.meals,
     error: state.meals.error,

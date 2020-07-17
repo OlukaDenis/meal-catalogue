@@ -6,7 +6,7 @@ const filterByIngredients = ingredient => dispatch => {
     .then(res => res.json())
     .then(result => {
       dispatch(filterMealsByIngredients(result.meals));
-      console.log(result.meals)
+      console.log(result.meals);
     })
     .catch(err => {
       dispatch(fetchingError(err));

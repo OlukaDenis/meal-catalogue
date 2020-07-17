@@ -20,7 +20,7 @@ const Meal = ({ meal }) => {
           <img
             src={strMealThumb}
             alt={strMeal}
-            style={{width: '100%'}}
+            style={{ width: '100%' }}
           />
           <div className="image-overlay" />
         </Link>
