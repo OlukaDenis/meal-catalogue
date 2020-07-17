@@ -15,6 +15,7 @@ const SearchIngredients = props => {
     setIngredients(ingredient);
     filterByIngredients(ingredient);
     history.push(`/search/${ingredient}`);
+    setStateIngredient('');
   }
 
   const handleChange = (e) => {
