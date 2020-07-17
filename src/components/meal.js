@@ -16,13 +16,16 @@ const Meal = ({ meal }) => {
   return (
     <Col md={6} lg={4} sm={10}>
       <div className="category-item">
-        <img
-          src={strMealThumb}
-          alt={strMeal}
-          style={{width: '100%'}}
-        />
+        <Link to={`${url}/${idMeal}`} className="meal-image">
+          <img
+            src={strMealThumb}
+            alt={strMeal}
+            style={{width: '100%'}}
+          />
+          <div className="image-overlay" />
+        </Link>
         <div className="category-info">
-          <Link to={`${url}/${idMeal}`}><h2>{strMeal}</h2></Link>
+          <Link to={`${url}/${idMeal}`}><h4>{strMeal}</h4></Link>
         </div>
       </div>
     </Col>

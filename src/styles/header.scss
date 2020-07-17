@@ -2,13 +2,14 @@
 
 .header {
   background-color: $primary;
-  padding: 20px 50px;
+  padding: 20px 100px;
   height: 80px;
 }
 
 nav {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 
   .logo {
     width: 30%;
