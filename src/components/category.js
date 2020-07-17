@@ -14,13 +14,13 @@ const Category = ({ category }) => {
   return (
     <Col md={6} lg={4} sm={10}>
       <div className="category-item">
-        <div className="img-div">
+        <Link to={`/${strCategory}`} className="img-div">
           <img
             src={strCategoryThumb}
             alt={strCategory}
           />
           <div className="img-overlay" />
-        </div>
+        </Link>
         
         <div className="category-info">
           <Link className="category-title" to={`/${strCategory}`}><h4>{strCategory}</h4></Link>

@@ -4,7 +4,10 @@ import '../styles/loading.scss';
 const LoadingPage = () => {
 
   return (
-    <div className="loader" />
+    <div className="loading-section">
+      <div className="loader" />
+    </div>
+   
   );
 };
 

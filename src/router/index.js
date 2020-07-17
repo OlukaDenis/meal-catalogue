@@ -13,6 +13,7 @@ const AppRouter = () => (
       <Route exact path="/" component={CategoryList} />
       <Route exact path="/search/:ingredient" component={MealList} />
       <Route exact path="/:categoryType" component={MealList} />
+      <Route exact path="/search/:ingredient/:mealID" component={SingleDish} />
       <Route exact path="/:categoryTpe/:mealID" component={SingleDish} />
       <Route component={NotFound} />
     </Switch>
