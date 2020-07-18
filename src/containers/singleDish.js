@@ -9,6 +9,7 @@ import LoadingPage from '../components/loadingPage';
 import fetchDish from '../actions/dish';
 import ErrorPage from '../components/errors/errorPage';
 import '../styles/singleDish.scss';
+let youtubeURL = '';
 
 const SingleDish = props => {
   const { mealID } = useParams();
@@ -35,6 +36,12 @@ const SingleDish = props => {
     strYoutube,
     strTags,
   } = dish;
+
+  if (strYoutube != undefined) {
+    youtubeURL = strYoutube.replace('watch?v=', 'embed/');
+  }
+  
+  console.log(youtubeURL);
 
   return (
     <section className="dish-section">
@@ -65,20 +72,30 @@ const SingleDish = props => {
                     <Row>
                       <Col style={{ margin: '0 auto' }} md={10} lg={10} sm={8}>
                         <div className="dish-instructions">
-                          <h3>Instructions</h3>
+                          <h3 className="dish-heading">Instructions</h3>
                           <p>{strInstructions}</p>
                         </div>
                       </Col>
                     </Row>
-
-                    <Row>
-                      <Col md={4} lg={4} sm={4}>
-                        <div className="youtube-link">
-                          <div style={{ backgroundImage: `url(${strMealThumb})`, height: 200 }} />
-                          <FontAwesomeIcon icon={faPlay} />
-                        </div>
-                      </Col>
-                    </Row>
+                    {
+                      youtubeURL 
+                      ?  <Row>
+                          <Col  style={{ margin: '0 auto' }} md={10} lg={10} sm={8}>
+                            <div className="youtube-link">
+                              <h3 className="dish-heading">Watch video</h3>
+                              <iframe
+                                src={youtubeURL}
+                                frameborder='0'
+                                allow='autoplay; encrypted-media'
+                                allowfullscreen
+                                title='video'
+                              />
+                            </div>
+                          </Col>
+                        </Row>
+                      : <div />
+                    }
+                   
                   </Container>
                 </div>
               </div>

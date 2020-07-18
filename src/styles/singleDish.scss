@@ -46,7 +46,6 @@
     width: 100%;
     height: 100%;
     background-color: rgba(2, 16, 34, 0.479);
-    // background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.219), rgba(0, 0, 0, 0.856));
   }
 }
 
@@ -69,15 +68,7 @@
       }
   }
 
-  .dish-instructions {
-    
-    h3 {
-      font-family: $font-secondary;
-      text-transform: uppercase;
-      text-align: center;
-      margin-bottom: 1em;
-    }
-    
+  .dish-instructions {    
 
     p {
       font-weight: 200;
@@ -87,5 +78,23 @@
       text-align: justify;
       padding-bottom: 30px;
     }
+  }
+}
+
+.dish-heading {
+  font-family: $font-secondary;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1em;
+  letter-spacing: 2px;
+  font-weight: 200;
+}
+
+.youtube-link {
+  iframe {
+    margin-bottom: 50px;
+    width: 100%;
+    max-height: 500px;
+    min-height: 500px;
   }
 }
