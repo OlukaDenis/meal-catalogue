@@ -5,7 +5,6 @@
   padding-top: 50px;
 }
 
-
 .category-item {
   position: relative;
   background-color: $light-bg;
@@ -17,7 +16,7 @@
 
     img {
       height: 200px;
-      transition: transform .2s
+      transition: transform 0.2s;
     }
 
     .img-overlay {

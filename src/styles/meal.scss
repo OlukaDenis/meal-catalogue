@@ -11,12 +11,11 @@
   margin-bottom: 40px;
 
   .meal-image {
-
     img {
       height: 350px;
-      transition: transform .2s
+      transition: transform 0.2s;
     }
-    
+
     .image-overlay {
       position: absolute;
       top: 0;
@@ -27,17 +26,15 @@
     }
 
     &:hover {
-      
       img {
         transform: scale(1.1);
       }
 
-      .image-overlay  {
+      .image-overlay {
         position: relative;
       }
     }
   }
-  
 
   .category-info {
     position: absolute;
