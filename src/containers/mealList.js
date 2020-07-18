@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useParams, useRouteMatch } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Container, Row } from 'react-bootstrap';
 import Meal from '../components/meal';
@@ -49,14 +49,11 @@ const MealList = props => {
   );
 };
 
-const mapStateToProps = state => {
-  console.log(state);
-  return {
-    meals: state.meals.meals,
-    error: state.meals.error,
-    loading: state.meals.loading,
-  };
-};
+const mapStateToProps = state => ({
+  meals: state.meals.meals,
+  error: state.meals.error,
+  loading: state.meals.loading,
+});
 
 const mapDispatchToProps = dispatch => ({
   fetchMeals: category => {

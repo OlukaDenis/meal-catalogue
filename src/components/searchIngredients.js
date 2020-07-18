@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/searchBar.scss';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { setIngredients } from '../actions/actionCreators';
 import filterByIngredients from '../actions/filterByIngredients';
@@ -44,5 +45,15 @@ const mapDispatchToProps = dispatch => ({
     dispatch(setIngredients(ingredient));
   },
 });
+
+SearchIngredients.defaultProps = {
+  filterByIngredients: () => undefined,
+  setIngredients: () => undefined,
+};
+
+SearchIngredients.propTypes = {
+  filterByIngredients: PropTypes.func,
+  setIngredients: PropTypes.func,
+};
 
 export default connect(null, mapDispatchToProps)(SearchIngredients);

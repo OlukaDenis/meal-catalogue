@@ -6,7 +6,7 @@ const Footer = () => (
   <section className="footer">
     <div className="footer-info">
 
-    <div className="social-icons">
+      <div className="social-icons">
         <ul className="text-center">
           <li>
             <a href="https://www.facebook.com/dennylucaz" target="_blank" rel="noreferrer">
