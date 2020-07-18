@@ -5,6 +5,7 @@ import MealList from '../containers/mealList';
 import SingleDish from '../containers/singleDish';
 import Header from '../components/header';
 import NotFound from '../components/errors/notFound';
+import Footer from '../components/footer';
 
 const AppRouter = () => (
   <Router>
@@ -17,6 +18,7 @@ const AppRouter = () => (
       <Route exact path="/:categoryTpe/:mealID" component={SingleDish} />
       <Route component={NotFound} />
     </Switch>
+    <Footer />
   </Router>
 );
 

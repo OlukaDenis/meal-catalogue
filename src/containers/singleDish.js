@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { Container, Row, Col } from 'react-bootstrap';
 import LoadingPage from '../components/loadingPage';
 import fetchDish from '../actions/dish';
+import ErrorPage from '../components/errors/errorPage';
+import '../styles/singleDish.scss';
 
 const SingleDish = props => {
   const { mealID } = useParams();
@@ -29,41 +31,50 @@ const SingleDish = props => {
     strInstructions,
     strMealThumb,
     strYoutube,
+    strTags,
   } = dish;
 
   return (
-    <section className="meals-section">
-      <Container>
-        <h3>{strMeal}</h3>
-        <Row>
+    <section className="dish-section">
           {(() => {
             if (loading) {
               return <LoadingPage />;
             }
             return (
-              error ? <p>{error.message}</p>
+              error ? <ErrorPage error={error.message} />
                 : (
-                  <>
-                    <Col md={6} lg={6} sm={10}>
-                      <div className="single-dish">
-                        <img src={strMealThumb} style={{ width: '100%' }} />
+                  <div className="dish-item">
+                      <div className="dish-image">
+                        <div className="img" style={{backgroundImage: `url(${strMealThumb})` }} />
+                        <div className="dish-title">
+                          <h3>{strMeal}</h3>
+                        </div>
+                        <div className="dish-overlay" />
                       </div>
-                    </Col>
-                    <Col md={6} lg={6} sm={10}>
-                      <div className="dish-instructions">
-                        <p>{strInstructions}</p>
-                        <p>
+                      <div className="dish-info">
+                        <p className="d-meta">
                           <span>{strCategory}</span>
                           <span>{strArea}</span>
+                          {
+                            strTags ? <span>{strTags}</span> : <p></p>
+                          }
+                          
                         </p>
+                        <Container>
+                          <Row>
+                            <Col style={{margin: '0 auto'}} md={10} lg={10} sm={8}>
+                              <div className="dish-instructions">
+                                <h3>Instructions</h3>
+                                <p>{strInstructions}</p>
+                              </div>
+                            </Col>
+                          </Row>
+                        </Container>
                       </div>
-                    </Col>
-                  </>
+                  </div>
                 )
             );
           })() }
-        </Row>
-      </Container>
     </section>
   );
 };

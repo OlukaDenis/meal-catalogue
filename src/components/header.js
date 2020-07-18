@@ -7,7 +7,7 @@ const Header = () => (
   <section className="header">
     <nav className="nav">
       <Link to="/" className="logo">
-        <h2>Fudiz</h2>
+        <h2>Keen Foods</h2>
       </Link>
       <SearchIngredients />
     </nav>
