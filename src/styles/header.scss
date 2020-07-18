@@ -4,6 +4,12 @@
   background-color: $primary;
   padding: 20px 100px;
   height: 80px;
+
+  @include media-breakpoint-down(sm) {
+    padding: 20px 10px;
+    height: 150px;
+  }
+
 }
 
 nav {
@@ -12,7 +18,6 @@ nav {
   justify-content: space-between;
 
   .logo {
-    width: 30%;
 
     h2 {
       letter-spacing: 5px;
@@ -21,10 +26,20 @@ nav {
       color: $whitish;
       text-transform: uppercase;
       font-weight: lighter;
+
+      
+      @include media-breakpoint-down(sm) {
+        font-size: 1.6rem;
+        padding-bottom: 10px;
+      }
     }
 
     &:hover {
       text-decoration: none;
     }
+  }
+
+  @include media-breakpoint-down(sm) {
+    justify-content: space-evenly;
   }
 }
