@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Container, Row, Col } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay } from '@fortawesome/fontawesome-free-solid';
 import LoadingPage from '../components/loadingPage';
 import fetchDish from '../actions/dish';
 import ErrorPage from '../components/errors/errorPage';
 import '../styles/singleDish.scss';
+
 let youtubeURL = '';
 
 const SingleDish = props => {
@@ -37,11 +36,9 @@ const SingleDish = props => {
     strTags,
   } = dish;
 
-  if (strYoutube != undefined) {
+  if (strYoutube !== undefined) {
     youtubeURL = strYoutube.replace('watch?v=', 'embed/');
   }
-  
-  console.log(youtubeURL);
 
   return (
     <section className="dish-section">
@@ -78,24 +75,26 @@ const SingleDish = props => {
                       </Col>
                     </Row>
                     {
-                      youtubeURL 
-                      ?  <Row>
-                          <Col  style={{ margin: '0 auto' }} md={10} lg={10} sm={8}>
-                            <div className="youtube-link">
-                              <h3 className="dish-heading">Watch video</h3>
-                              <iframe
-                                src={youtubeURL}
-                                frameborder='0'
-                                allow='autoplay; encrypted-media'
-                                allowfullscreen
-                                title='video'
-                              />
-                            </div>
-                          </Col>
-                        </Row>
-                      : <div />
+                      youtubeURL
+                        ? (
+                          <Row>
+                            <Col style={{ margin: '0 auto' }} md={10} lg={10} sm={8}>
+                              <div className="youtube-link">
+                                <h3 className="dish-heading">Watch video</h3>
+                                <iframe
+                                  src={youtubeURL}
+                                  frameBorder="0"
+                                  allow="autoplay; encrypted-media"
+                                  allowFullScreen
+                                  title="video"
+                                />
+                              </div>
+                            </Col>
+                          </Row>
+                        )
+                        : <div />
                     }
-                   
+
                   </Container>
                 </div>
               </div>
