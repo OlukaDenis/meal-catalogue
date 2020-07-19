@@ -16,6 +16,7 @@ const Category = ({ category }) => {
       <div className="category-item">
         <Link to={`/${strCategory}`} className="img-div">
           <img
+            data-testid="image"
             src={strCategoryThumb}
             alt={strCategory}
           />

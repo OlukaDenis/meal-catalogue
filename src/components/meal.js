@@ -18,6 +18,7 @@ const Meal = ({ meal }) => {
       <div className="category-item">
         <Link to={`${url}/${idMeal}`} className="meal-image">
           <img
+            data-testid="image"
             src={strMealThumb}
             alt={strMeal}
             style={{ width: '100%' }}
