@@ -91,6 +91,20 @@
   font-weight: 200;
 }
 
+.ingredient-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  div {
+    font-weight: 200;
+    font-family: $font-primary;
+    letter-spacing: 0.8px;
+    line-height: 1.5em;
+    text-align: justify;
+    padding: 10px;
+  }
+}
+
 .youtube-link {
   iframe {
     margin-bottom: 50px;

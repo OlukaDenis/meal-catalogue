@@ -15,17 +15,17 @@ describe('Testing the category component', () => {
 
   test('It should render category name', () => {
     render(<Category category={category} />, {wrapper: MemoryRouter});
-    expect(screen.queryByText('Meat')).toBeVisible();
+    expect(screen.queryByText(category.strCategory)).toBeVisible();
   });
 
   test('It should render category description', () => {
     render(<Category category={category} />, {wrapper: MemoryRouter});
-    expect(screen.queryByText('Best meal')).toBeVisible();
+    expect(screen.queryByText(category.strCategoryDescription)).toBeVisible();
   });
 
   test('It should render category image', () => {
     render(<Category category={category} />, {wrapper: MemoryRouter});
-    expect(screen.queryByTestId('image')).toHaveAttribute('src','image.png');
+    expect(screen.queryByTestId('image')).toHaveAttribute('src', category.strCategoryThumb);
   });
 
 

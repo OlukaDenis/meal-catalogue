@@ -16,11 +16,11 @@ describe('It should render meal component', () => {
 
   test('It should render meal name', () => {
     render(<Meal meal={meal} />, {wrapper: MemoryRouter});
-    expect(screen.queryByText('Chicken Salad')).toBeVisible();
+    expect(screen.queryByText(meal.strMeal)).toBeVisible();
   });
 
   it('renders a category with an image ', () => {
     render(<Meal meal={meal} />, {wrapper: MemoryRouter});
-    expect(screen.queryByTestId('image')).toHaveAttribute('src','chicken.png');
+    expect(screen.queryByTestId('image')).toHaveAttribute('src', meal.strMealThumb);
   });
 });
