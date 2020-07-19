@@ -103,6 +103,10 @@
     text-align: justify;
     padding: 10px;
   }
+
+  .ing-item:before {
+    content:"• ";
+  }
 }
 
 .youtube-link {

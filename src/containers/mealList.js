@@ -25,7 +25,7 @@ const MealList = props => {
     if (categoryType) {
       fetchMeals(categoryType);
     }
-  }, []);
+  }, [fetchMeals, categoryType]);
 
   return (
     <section className="meals-section">

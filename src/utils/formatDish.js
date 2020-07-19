@@ -1,4 +1,4 @@
-export const getIngredients = meal => {
+const getIngredients = meal => {
   const ingredientArray = [];
 
   Object.keys(meal).forEach(item => {
@@ -9,3 +9,5 @@ export const getIngredients = meal => {
   });
   return ingredientArray;
 };
+
+export default getIngredients;

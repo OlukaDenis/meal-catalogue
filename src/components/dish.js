@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'react-bootstrap';
-import { getIngredients } from '../utils/formatDish';
+import getIngredients from '../utils/formatDish';
 import '../styles/singleDish.scss';
+
 let youtubeURL = '';
 
-const Dish = ({dish}) => {
-
+const Dish = ({ dish }) => {
   const {
     strMeal,
     strCategory,
@@ -42,21 +42,21 @@ const Dish = ({dish}) => {
         </p>
         <Container>
 
-        <Row>
+          <Row>
 
-          <Col style={{ margin: '0 auto' }} md={6} lg={6} sm={8}>
-            <div className="dish-instructions">
-              <h3 className="dish-heading">Ingredients</h3>
-              <div className="ingredient-list">
-                {
+            <Col style={{ margin: '0 auto', paddingBottom: 40 }} md={6} lg={6} sm={8}>
+              <div className="dish-instructions">
+                <h3 className="dish-heading">Ingredients</h3>
+                <div className="ingredient-list">
+                  {
                   ingredients.map(item => (
-                  <div>{item}</div>
+                    <div className="ing-item" key={item}>{item}</div>
                   ))
                 }
+                </div>
               </div>
-            </div>
-          </Col>
-        </Row>
+            </Col>
+          </Row>
 
           <Row>
             <Col style={{ margin: '0 auto' }} md={10} lg={10} sm={8}>
@@ -91,7 +91,11 @@ const Dish = ({dish}) => {
       </div>
     </div>
   );
-}
+};
+
+Dish.defaultProps = {
+  dish: [],
+};
 
 Dish.propTypes = {
   dish: PropTypes.shape({
@@ -103,6 +107,6 @@ Dish.propTypes = {
     strYoutube: PropTypes.string,
     strTags: PropTypes.string,
   }),
-}
+};
 
 export default Dish;
