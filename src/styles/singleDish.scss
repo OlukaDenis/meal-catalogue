@@ -13,6 +13,10 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    @include media-breakpoint-down(md) {
+      height: 300px;
+    }
   }
 
   .dish-title {
@@ -22,6 +26,10 @@
     position: absolute;
     top: 45%;
     left: 20%;
+
+    @include media-breakpoint-down(md) {
+      left: 0;
+    }
 
     h3 {
       width: 700px;
