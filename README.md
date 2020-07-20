@@ -3,7 +3,7 @@
 This is a capstone project of React and Redux section in Microverse's Technical curriculum. Find it [here](https://www.notion.so/Catalogue-of-Statistics-72446e7fa33c403a9b6a0bc1de5c6cf5).
 The goal of the project is to build a simple calculator with basics of react.
 
-![kee-foods](https://user-images.githubusercontent.com/37341054/87920803-62c72900-ca82-11ea-9a84-77acfa306bb0.png)
+![Webp net-gifmaker](https://user-images.githubusercontent.com/37341054/87928934-4fba5600-ca8e-11ea-9ce4-00a0aee360e5.gif)
 
 ## Features
 - Browse various categories of dishes
