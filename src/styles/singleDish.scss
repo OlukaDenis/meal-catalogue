@@ -104,10 +104,9 @@
     padding: 10px;
   }
 
-  .ing-item:before {
-    content:"◉ ";
+  .ing-item::before {
+    content: "◉ ";
     height: 20px;
-    
   }
 }
 

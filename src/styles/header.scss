@@ -9,7 +9,6 @@
     padding: 20px 10px;
     height: 150px;
   }
-
 }
 
 nav {
@@ -18,7 +17,6 @@ nav {
   justify-content: space-between;
 
   .logo {
-
     h2 {
       letter-spacing: 5px;
       font-family: $font-primary;
@@ -27,7 +25,6 @@ nav {
       text-transform: uppercase;
       font-weight: lighter;
 
-      
       @include media-breakpoint-down(sm) {
         font-size: 1.6rem;
         padding-bottom: 10px;
