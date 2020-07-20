@@ -23,4 +23,9 @@ describe('It should render meal component', () => {
     render(<Dish dish={meal} />, { wrapper: MemoryRouter });
     expect(screen.queryByText(meal.strInstructions)).toBeVisible();
   });
+
+  it('renders a dish with a cover image ', () => {
+    render(<Dish dish={meal} />, { wrapper: MemoryRouter });
+    expect(screen.queryByTestId('image')).toHaveStyle(`background-image: url(${meal.strMealThumb})`)
+  });
 });

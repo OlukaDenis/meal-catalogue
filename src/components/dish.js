@@ -26,7 +26,7 @@ const Dish = ({ dish }) => {
   return (
     <div className="dish-item">
       <div className="dish-image">
-        <div className="img" style={{ backgroundImage: `url(${strMealThumb})` }} />
+        <div data-testid="image" className="img" style={{ backgroundImage: `url(${strMealThumb})` }} />
         <div className="dish-title">
           <h3>{strMeal}</h3>
         </div>
