@@ -105,7 +105,9 @@
   }
 
   .ing-item:before {
-    content:"• ";
+    content:"◉ ";
+    height: 20px;
+    
   }
 }
 
