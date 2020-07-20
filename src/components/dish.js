@@ -36,8 +36,9 @@ const Dish = ({ dish }) => {
         <p className="d-meta">
           <span>{strCategory}</span>
           <span>{strArea}</span>
-          {
-            strTags ? <span>{strTags}</span> : <p />
+          {(() => {
+            if (strTags) return <span>{strTags}</span>  
+          })()  
           }
         </p>
         <Container>
