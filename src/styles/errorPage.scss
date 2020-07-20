@@ -6,12 +6,17 @@
 
 .error-info {
   position: absolute;
-  left: 45%;
-  top: 35%;
+  left: 40%;
+  top: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @include media-breakpoint-down(sm) {
+    left: 30%;
+    top: 60%;
+  }
 
   img {
     width: 100px;

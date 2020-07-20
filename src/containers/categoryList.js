@@ -15,7 +15,7 @@ const CategoryList = ({
 }) => {
   useEffect(() => {
     fetchCategories();
-  }, []);
+  }, [fetchCategories]);
 
   return (
     <section className="categories-section">

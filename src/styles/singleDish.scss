@@ -13,6 +13,10 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    @include media-breakpoint-down(md) {
+      height: 300px;
+    }
   }
 
   .dish-title {
@@ -22,6 +26,10 @@
     position: absolute;
     top: 45%;
     left: 20%;
+
+    @include media-breakpoint-down(md) {
+      left: 0;
+    }
 
     h3 {
       width: 700px;
@@ -91,11 +99,40 @@
   font-weight: 200;
 }
 
+.ingredient-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include media-breakpoint-down(sm) {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    padding-left: 20px;
+  }
+
+  div {
+    font-weight: 200;
+    font-family: $font-primary;
+    letter-spacing: 0.8px;
+    line-height: 1.5em;
+    text-align: justify;
+    padding: 10px;
+  }
+
+  .ing-item::before {
+    content: "◉ ";
+    height: 20px;
+  }
+}
+
 .youtube-link {
   iframe {
     margin-bottom: 50px;
     width: 100%;
-    max-height: 500px;
     min-height: 500px;
+
+    @include media-breakpoint-down(sm) {
+      min-height: 300px;
+    }
   }
 }
